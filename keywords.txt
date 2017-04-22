@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map of kjArduino
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+Pin	KEYWORD1
+Log KEYWORD1
+
+#######################################
+# Datatypes (KEYWORD2)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+#Pin
+setMode KEYWORD2
+fade KEYWORD2
+getPin KEYWORD2
+
+#Log
+debug KEYWORD2
+info KEYWORD2
+
+#q_math
+Q_sqrt KEYWORD2
+Q_rsqrt KEYWORD2

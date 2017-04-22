@@ -12,6 +12,10 @@ env:
 - BOARD=leonardo
 - BOARD=megaatmega2560
 - BOARD=due
+- BOARD=nanoatmega328
+- BOARD=nanoatmega168
+- BOARD=zero
+- BOARD=micro
 
 script:
 - set -eo pipefail;

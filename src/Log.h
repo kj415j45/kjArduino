@@ -38,6 +38,7 @@ class Log{
         
         int hz; //波特率
         bool DEBUG = false; //调试模式(默认关闭)
+        bool useTimestamp = true; //输出时间戳(默认开启)
         
     public:
         
@@ -52,16 +53,27 @@ class Log{
         }
         
         /**
-         * 做一条记录(带时间戳)
+         * 时间戳
+         * 
+         * @param bool 是否需要输出时间戳
+         */
+        void timestamp(bool use){
+            this->useTimestamp = use;
+        }
+
+        /**
+         * 做一条记录
          * 
          * @param char[] logType 记录类型
          * @param char[] logMessage 记录信息
          */
         void log(char logType[], char logMessage[]){
-            char time[10];
-            sprintf(time,"%10d",millis());
+            if(this->useTimestamp){
+                char time[10];
+                sprintf(time,"%10d",millis());
 
-            this->bracketMessage(time); //TODO 使用系统时间
+                this->bracketMessage(time); //TODO 使用系统时间
+            }
             
             this->bracketMessage(logType);
             

@@ -1,3 +1,6 @@
+#ifndef KJ_LOG_H
+#define KJ_LOG_H
+
 //规定要使用的语言，代号遵循ISO 639-1
 #define Locale_zh
 
@@ -89,3 +92,5 @@ class Log{
         }
         
 };
+
+#endif

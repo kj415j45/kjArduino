@@ -1,3 +1,6 @@
+#ifndef KJ_PIN_H
+#define KJ_PIN_H
+
 /**
  * 高效地使用针脚
  * 
@@ -157,3 +160,4 @@ class Pin{
         }
 };
 
+#endif

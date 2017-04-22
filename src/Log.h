@@ -4,6 +4,8 @@
 //导入本地化文件
 #include "Locale.h"
 
+#include <stdio.h>
+
 /**
  * 日志记录(基于Serial)
  * 
@@ -52,10 +54,11 @@ class Log{
          * @param char[] logType 记录类型
          * @param char[] logMessage 记录信息
          */
-        void log(char logType[], char logMessage[]){ //TODO 字符串连接
-            Serial.write('[');
-            Serial.print(millis());
-            Serial.write(']');
+        void log(char logType[], char logMessage[]){
+            char time[10];
+            sprintf(time,"%10d",millis());
+
+            this->bracketMessage(time); //TODO 使用系统时间
             
             this->bracketMessage(logType);
             

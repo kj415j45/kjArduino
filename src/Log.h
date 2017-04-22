@@ -69,10 +69,12 @@ class Log{
         }
         
         /**
-         * 启用调试模式(使 debug() 可用)
+         * 调试模式(使 debug() 可用)
+         * 
+         * @param bool 是否开启调试模式
          */
-        void debugMode(){
-            this->DEBUG = true;
+        void debugMode(bool debug = true)){
+            this->DEBUG = debug;
         }
         
         /**

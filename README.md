@@ -1,4 +1,4 @@
-# kjArduino
+# kjArduino [![Build Status](https://travis-ci.org/kj415j45/kjArduino.svg?branch=master)](https://travis-ci.org/kj415j45/kjArduino)
 
 使用本框架让您的 Arduino 源码既简洁又高效
 

@@ -23,7 +23,7 @@ class Log{
         /**
          * 制造被方括号包围的消息
          */
-        void message(char message[]){ //TODO 英文翻译
+        void bracketMessage(char message[]){
             Serial.write('[');
             Serial.print(message);
             Serial.write(']');
@@ -49,15 +49,15 @@ class Log{
         /**
          * 做一条记录(带时间戳)
          * 
-         * @param string logType 记录类型
-         * @param string logMessage 记录信息
+         * @param char[] logType 记录类型
+         * @param char[] logMessage 记录信息
          */
         void log(char logType[], char logMessage[]){ //TODO 字符串连接
             Serial.write('[');
             Serial.print(millis());
             Serial.write(']');
             
-            this->message(logType);
+            this->bracketMessage(logType);
             
             Serial.println(logMessage);
         }

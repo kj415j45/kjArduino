@@ -15,7 +15,7 @@
 Pin led = Pin(13, OUTPUT);
 
 //也允许只声明针脚却不声明用途,但最好之后在setup()中初始化
-Pin button = Pin(D1);
+Pin button = Pin(32);
 
 //声明一个呼吸灯
 Pin breath = Pin(9, OUTPUT);

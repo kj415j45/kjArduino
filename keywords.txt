@@ -25,7 +25,3 @@ getPin KEYWORD2
 #Log
 debug KEYWORD2
 info KEYWORD2
-
-#q_math
-Q_sqrt KEYWORD2
-Q_rsqrt KEYWORD2

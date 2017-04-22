@@ -109,17 +109,20 @@ class Pin{
          * @param int to         //到to
          * @param int tick = 10  //每次变化延迟 tick ms
          * @param int jump = 1   //每次变化跳跃值
+         * @param callback       //每次模拟值变化时调用的回调函数名
          */
-        void fade(int from, int to, int tick = 10, int jump = 1){ //TODO 增加回调函数选项
+        void fade(int from, int to, int tick = 10, int jump = 1, void (*callback)() = NULL){
             if(from<to){
                 while(from<=to){
                     this->set(from);
+                    callback();
                     from += jump;
                     delay(tick);
                 }
             }else{
                 while(from>=to){
                     this->set(from);
+                    callback();
                     from -= jump;
                     delay(tick);
                 }

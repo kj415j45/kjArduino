@@ -85,7 +85,7 @@ class Log{
          * 
          * @param bool 是否开启调试模式
          */
-        void debugMode(bool debug = true)){
+        void debugMode(bool debug = true){
             this->DEBUG = debug;
         }
         

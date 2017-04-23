@@ -113,6 +113,7 @@ class Pin{
          * @param int tick = 10  //每次变化延迟 tick ms
          * @param int jump = 1   //每次变化跳跃值
          * @param callback       //每次模拟值变化时调用的回调函数名
+         * @return void
          */
         void fade(int from, int to, int tick = 10, int jump = 1, void (*callback)() = NULL){
             if(from<to){
@@ -136,6 +137,7 @@ class Pin{
          * 设置模拟值
          * 
          * @param int value
+         * @return void
          */
         void set(int value){
             analogWrite(this->pin, value);
@@ -143,6 +145,8 @@ class Pin{
         
         /**
          * 获得当前模拟值
+         * 
+         * @return int 针脚的模拟值
          */
         int get(){
             return analogRead(this->pin);

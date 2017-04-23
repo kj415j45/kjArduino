@@ -142,6 +142,13 @@ class Pin{
         }
         
         /**
+         * 获得当前模拟值
+         */
+        int get(){
+            return analogRead(this->pin);
+        }
+
+        /**
          * 死循直到低电平
          * 
          * @return void

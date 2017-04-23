@@ -9,6 +9,9 @@
 
 #include <stdio.h>
 
+#include "Pin.h"
+
+
 /**
  * 日志记录(基于Serial)
  * 
@@ -41,7 +44,7 @@ class Log{
         bool useTimestamp = true; //输出时间戳(默认开启)
         
     public:
-        
+
         /**
          * 日志记录开始
          * 
@@ -103,6 +106,30 @@ class Log{
          */
         void info(char logMessage[]){
             this->log("INFO", logMessage);
+        }
+
+        enum type{
+            DIGITAL = 0,
+            ANALOG = 1,
+            MIX = 2,
+        };
+
+        /**
+         * 记录指定针脚的状态
+         * 
+         * @param Pin 指定针脚
+         * @param int 需要信息的类型
+         */
+        void pinInfo(Pin x,int mode){
+            char message[100];
+            if(mode == DIGITAL){
+                sprintf(message, "%s%d%s%s\0", PIN, x.getPin(), "->", HIGH_LEVEL);
+            }else if(mode == ANALOG){
+                sprintf(message, "%s%d%s%d\0", PIN, x.getPin(), "->", x.get());
+            }else if(mode == MIX){
+                sprintf(message, "%s%d%s%s,%s\0", PIN, x.getPin(), "->", HIGH_LEVEL, x.get());
+            }
+            this->debug(message);
         }
         
 };

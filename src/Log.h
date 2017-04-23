@@ -23,6 +23,8 @@ class Log{
         
         /**
          * 启动Serial
+         * 
+         * @return void
          */
         void setup(){
             Serial.begin(this->hz);
@@ -30,6 +32,9 @@ class Log{
         
         /**
          * 制造被方括号包围的消息
+         * 
+         * @param char[] 消息内容
+         * @return void
          */
         void bracketMessage(char message[]){
             Serial.write('[');
@@ -49,6 +54,7 @@ class Log{
          * 日志记录开始
          * 
          * @param int hz = 9600 波特率
+         * @return void
          */
         void begin(int hz = 9600){
             this->hz = hz;
@@ -59,6 +65,7 @@ class Log{
          * 时间戳
          * 
          * @param bool 是否需要输出时间戳
+         * @return void
          */
         void timestamp(bool use){
             this->useTimestamp = use;
@@ -69,6 +76,7 @@ class Log{
          * 
          * @param char[] logType 记录类型
          * @param char[] logMessage 记录信息
+         * @return void
          */
         void log(char logType[], char logMessage[]){
             if(this->useTimestamp){
@@ -94,6 +102,8 @@ class Log{
         
         /**
          * 输出调试级别的记录
+         * 
+         * @return void
          */
         void debug(char logMessage[]){
             if(this->DEBUG){
@@ -103,6 +113,8 @@ class Log{
         
         /**
          * 输出信息级别的记录
+         * 
+         * @return void
          */
         void info(char logMessage[]){
             this->log("INFO", logMessage);
@@ -119,6 +131,7 @@ class Log{
          * 
          * @param Pin 指定针脚
          * @param int 需要信息的类型
+         * @return void
          */
         void pinInfo(Pin x,int mode){
             char message[100];

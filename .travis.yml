@@ -22,3 +22,6 @@ script:
   for e in examples/*; do
     platformio ci --board=$BOARD --lib=. $e/*;
   done
+
+notifications:
+    email: false

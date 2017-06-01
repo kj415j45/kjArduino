@@ -13,9 +13,7 @@ class Pin{
         /**
          * 禁用无参构造方法
          */
-        Pin(){
-            
-        }
+        Pin();
         
     protected:
         

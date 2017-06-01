@@ -15,21 +15,13 @@
 Pin led = Pin(13, OUTPUT);
 
 //也允许只声明针脚却不声明用途,但最好之后在setup()中初始化
-<<<<<<< HEAD:examples/example-1/example-1.ino
 Pin button = Pin(16);//Arudino nano的16号针脚对应D2
-=======
-Pin button = Pin(32);
->>>>>>> master:examples/Pin/Pin.ino
 
 //声明一个呼吸灯
 Pin breath = Pin(9, OUTPUT);
 
 void setup(){
-<<<<<<< HEAD:examples/example-1/example-1.ino
-    button.setMode(INPUT); //声明button这个针脚的用途
-=======
     button.setMode(INPUT_PULLUP); //声明button这个针脚的用途
->>>>>>> master:examples/Pin/Pin.ino
 }
 
 void loop(){

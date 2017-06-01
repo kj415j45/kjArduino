@@ -8,52 +8,46 @@
  */
 class Car{
     private:
-        Car();
 
     protected:
+        Car();
+
         int speed; //默认车速
-        bool ((*turnLeft)());
-        bool ((*turnRight)());
-        void straight();
+        virtual bool turnLeft();
+        virtual bool turnRight();
+        virtual bool straight();
+        virtual bool needStop();
 
     public:
-        void left(); //左转
-        void right(); //右转
+        virtual void left(); //左转
+        virtual void right(); //右转
+        virtual void go(); //直走
+        virtual void stop(); //停车
 
-        /**
-         * 设置左转的回调函数
-         * 
-         * @param (bool callback()) 返回true时左转
-         */
-        void turnLeftWhen(bool (*callback)()){
-            this->turnLeft=callback;
+        virtual void set(...);
+
+        void setSpeed(int speed){
+            this->speed = speed;
         }
-
-        /**
-         * 设置右转的回调函数
-         * 
-         * @param (bool callback()) 返回true时右转
-         */
-        void turnRightWhen(bool (*callback)()){
-            this->turnRight=callback;
-        }
-
-        void setSpeed(); //设置默认车速
 
         /**
          * 前进！
          */
-        void go(){
+        void Go(){
             if(this->turnLeft()){
                 this->left();
             }else if(this->turnRight()){
                 this->right();
+            }else if(this->straight()){
+                this->go();
+            }else if(this->needStop()){
+                this->stop();
             }else{
-                this->straight();
+                this->go();
             }
         }
 
-        void back(); //倒退
+        virtual void back(); //倒退
 };
 
 #endif

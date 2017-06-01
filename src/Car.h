@@ -13,18 +13,18 @@ class Car{
         Car();
 
         int speed; //默认车速
-        virtual bool turnLeft();
-        virtual bool turnRight();
-        virtual bool straight();
-        virtual bool needStop();
 
     public:
-        virtual void left(); //左转
-        virtual void right(); //右转
-        virtual void go(); //直走
-        virtual void stop(); //停车
+        bool turnLeft();
+        bool turnRight();
+        bool straight();
+        bool needStop();
+        void left(); //左转
+        void right(); //右转
+        void go(); //直走
+        void stop(); //停车
 
-        virtual void set(...);
+        void set(...);
 
         void setSpeed(int speed){
             this->speed = speed;
@@ -47,7 +47,8 @@ class Car{
             }
         }
 
-        virtual void back(); //倒退
+        void back(); //倒退
 };
 
 #endif
+

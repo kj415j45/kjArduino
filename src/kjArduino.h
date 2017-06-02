@@ -5,6 +5,7 @@
 #include "Pin.h"
 #include "Log.h"
 
+#include "Car.h"
 #include "CarFactory.h"
 
 #endif

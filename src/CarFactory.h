@@ -11,10 +11,10 @@ class CarFactory{
 
     public:
 
-        Car getCar(int car){
+        Car* getCar(int car){
             switch(car){
                 case 1:
-                    return (Car)Car_1();
+                    return new Car_1();
             }
         }
         

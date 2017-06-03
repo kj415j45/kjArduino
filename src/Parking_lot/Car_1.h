@@ -27,7 +27,7 @@ i是灰度传感，l是红外距离传感
  *
  * @author kj415j45
  */
-class Car_1 : Car{
+class Car_1 : public Car{
     private:
 
         Pin Li = NULL; //左灰度
@@ -43,8 +43,10 @@ class Car_1 : Car{
     protected:
 
     public:
-    
+
+        virtual void set();
         Car_1();
+        ~Car_1();
         
         /**
          * 设置车的针脚接口(只能设置一次)
@@ -149,9 +151,9 @@ class Car_1 : Car{
          *
          * @param int speed = 100 倒车速度
          */
-        void back(int speed = 100){
-            this->L(false, speed);
-            this->R(false, speed);
+        void back(){
+            this->L(false, this->speed);
+            this->R(false, this->speed);
         }
 };
 

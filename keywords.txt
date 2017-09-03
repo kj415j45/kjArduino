@@ -7,7 +7,7 @@
 #######################################
 
 Pin	KEYWORD1
-Log KEYWORD1
+Log	KEYWORD1
 
 #######################################
 # Datatypes (KEYWORD2)
@@ -18,10 +18,10 @@ Log KEYWORD1
 #######################################
 
 #Pin
-setMode KEYWORD2
-fade KEYWORD2
-getPin KEYWORD2
+setMode	KEYWORD2
+fade	KEYWORD2
+getPin	KEYWORD2
 
 #Log
-debug KEYWORD2
-info KEYWORD2
+debug	KEYWORD2
+info	KEYWORD2
